@@ -11,10 +11,10 @@ function App() {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Redux Toolkit Кубик</h1>
+      <h1>Dice Game</h1>
 
       <div style={{ fontSize: '72px', margin: '20px 0' }}>
-        {lastRoll ? lastRoll.value : 'Начните!'}
+        {lastRoll ? lastRoll.value : 'Get started!'}
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
@@ -22,27 +22,27 @@ function App() {
           onClick={() => dispatch(rollDie())}
           style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer' }}
         >
-          Бросить кубик
+          Roll the dice
         </button>
         <button 
           onClick={() => dispatch(clearHistory())}
           disabled={history.length === 0}
           style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer' }}
         >
-          Очистить историю ({history.length})
+          Clear the history ({history.length})
         </button>
       </div>
 
       <hr style={{ margin: '30px 0' }} />
 
-      <h2>История бросков</h2>
+      <h2>History</h2>
       {history.length === 0 ? (
-        <p>История пуста.</p>
+        <p>The history is empty</p>
       ) : (
         <ul style={{ listStyleType: 'none', padding: 0 }}>
           {[...history].reverse().map((roll, index) => ( 
             <li key={index} style={{ marginBottom: '5px' }}>
-              **Значение: {roll.value}** (Время: {roll.timestamp})
+              **Value: {roll.value}** (Time: {roll.timestamp})
             </li>
           ))}
         </ul>
