@@ -9,7 +9,7 @@ const diceSlice = createSlice({
   initialState,
   reducers: {
     rollDie: (state) => {
-      const rollValue = Math.floor(Math.random() * 7); 
+      const rollValue = Math.floor(Math.random() * 6) + 1; 
       const newRoll = {
         value: rollValue,
         timestamp: new Date().toLocaleTimeString('ru-RU'), 
